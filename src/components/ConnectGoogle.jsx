@@ -1,7 +1,19 @@
+import { useState } from 'react';
 import GoogleLogo from '../icons/GoogleLogo';
 import Button from './Button';
 
-function ConnectGoogle() {
+function ConnectGoogle({ done }) {
+  const [loading, setLoading] = useState(false);
+
+  function handleClick() {
+    setLoading(true);
+    // mock api call stuff
+    setTimeout(() => {
+      setLoading(false);
+      done();
+    }, 3 * 1000);
+  }
+
   return (
     <div className="p-12 pb-2">
       <div className="flex flex-row gap-6 mb-6">
@@ -13,7 +25,9 @@ function ConnectGoogle() {
           </p>
         </div>
       </div>
-      <Button>Connect</Button>
+      <Button onClick={handleClick} loading={loading}>
+        Connect
+      </Button>
     </div>
   );
 }
