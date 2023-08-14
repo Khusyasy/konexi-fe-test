@@ -8,7 +8,7 @@ function BlockBase({ icon, title = 'Block Title', children }) {
         {icon}
         <h1 className="font-bold w-full mx-4 text-xl">{title}</h1>
         <IconButton>
-          <TrashIcon className="w-8 h-8 text-black" />
+          <TrashIcon className="w-7 h-7 text-black" />
         </IconButton>
       </div>
       <div>{children}</div>
