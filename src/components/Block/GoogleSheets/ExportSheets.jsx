@@ -3,6 +3,7 @@ import GoogleSheetsLogo from '../../../icons/GoogleSheetsLogo';
 import Dropdown from '../../Dropdown';
 import Button from '../../Button';
 import SheetsDropdown from './SheetsDropdown';
+import dayjs from '../../../plugins/dayjs';
 
 function ExportSheets() {
   const [accounts, setAccounts] = useState([
@@ -48,6 +49,18 @@ function ExportSheets() {
     setSelectedTab(selectedSheet.tabs[0]);
   }, [selectedSheet]);
 
+  const [loading, setLoading] = useState(false);
+  const [lastExport, setLastExport] = useState('');
+
+  function exportData() {
+    setLoading(true);
+    setTimeout(() => {
+      // mock api call
+      setLoading(false);
+      setLastExport(Date.now());
+    }, 2 * 1000);
+  }
+
   return (
     <div className="pt-6">
       <div>
@@ -92,11 +105,20 @@ function ExportSheets() {
         <Button
           full
           className="h-16 max-h-16"
-          disabled={selectedAccount === '' || selectedSheet === ''}
+          disabled={
+            selectedAccount === '' || selectedSheet === '' || selectedTab === ''
+          }
+          loading={loading}
+          onClick={exportData}
         >
           Export
         </Button>
       </div>
+      {lastExport && (
+        <div className="mt-2 text-center text-gray-500 font-semibold">
+          Last export {dayjs(lastExport).fromNow()}
+        </div>
+      )}
     </div>
   );
 }
