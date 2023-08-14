@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import GoogleSheetsLogo from '../../../icons/GoogleSheetsLogo';
 import Dropdown from '../../Dropdown';
 import Button from '../../Button';
@@ -12,7 +12,7 @@ function ExportSheets() {
     },
     {
       id: 2,
-      name: 'Account 2',
+      name: 'Account Name',
     },
     {
       id: 3,
@@ -24,18 +24,29 @@ function ExportSheets() {
   const [sheets, setSheets] = useState([
     {
       id: 1,
+      name: 'MySheet',
+      tabs: ['Work', 'Study', 'Recipes', 'Others'],
+    },
+    {
+      id: 2,
       name: 'sheetname',
       tabs: ['Tab 1', 'Tab 2', 'Tab 3'],
     },
     {
-      id: 2,
-      name: 'sheetname 2',
+      id: 3,
+      name: 'Sheet 3',
       tabs: ['Tab 1', 'Tab 2', 'Tab 3'],
     },
   ]);
-  const [selectedSheet, setSelectedSheet] = useState(sheets[0]);
+  const [selectedSheet, setSelectedSheet] = useState('');
 
-  const [selectedTab, setSelectedTab] = useState(sheets[0].tabs[0]);
+  const [selectedTab, setSelectedTab] = useState('');
+  useEffect(() => {
+    if (!selectedSheet) {
+      return;
+    }
+    setSelectedTab(selectedSheet.tabs[0]);
+  }, [selectedSheet]);
 
   return (
     <div className="pt-6">
