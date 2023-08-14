@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 import BlockBase from '../BlockBase';
 import ConnectGoogle from './ConnectGoogle';
+import ExportSheets from './ExportSheets';
 
 import Button from '../../Button';
 
 import GoogleSheetsLogo from '../../../icons/GoogleSheetsLogo';
-import FlowIcon from '../../../icons/FlowIcon';
-import ExportSheets from './ExportSheets';
+import { CircleStackIcon } from '@heroicons/react/24/outline';
 
 const STEPS = {
   CONNECT_GOOGLE: 0,
@@ -56,7 +56,7 @@ function GoogleSheets() {
             loading={loading}
             disabled={loading}
           >
-            <FlowIcon className="text-gray-500" />
+            <CircleStackIcon className="h-8 w-8 text-gray-500" />
             Connect Flow Node to Import to Google Sheets
           </Button>
         </div>
