@@ -8,6 +8,7 @@ function Button({
   variant = 'primary',
   className,
   children,
+  disabled,
   ...props
 }) {
   const btnClass = classNames(
@@ -21,6 +22,7 @@ function Button({
       'w-32': !full,
       'rounded-full': rounded,
       'rounded-lg': !rounded,
+      'opacity-50 cursor-not-allowed': disabled,
     },
     className
   );

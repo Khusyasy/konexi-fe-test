@@ -1,8 +1,7 @@
-import { Fragment, useState } from 'react';
-import { Listbox, Transition } from '@headlessui/react';
-import { ChevronDownIcon, CheckIcon } from '@heroicons/react/20/solid';
+import { useState } from 'react';
 import GoogleSheetsLogo from '../../../icons/GoogleSheetsLogo';
 import Dropdown from '../../Dropdown';
+import Button from '../../Button';
 
 function ExportSheets() {
   const [accounts, setAccounts] = useState([
@@ -63,6 +62,14 @@ function ExportSheets() {
           setSelectedItem={setSelectedSheet}
           icon={<GoogleSheetsLogo className="h-7" />}
         />
+      </div>
+      <div className="mt-6">
+        <Button
+          className="w-full"
+          disabled={selectedAccount === '' || selectedSheet === ''}
+        >
+          Export
+        </Button>
       </div>
     </div>
   );
