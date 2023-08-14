@@ -24,8 +24,7 @@ function Logo() {
 }
 
 function GoogleSheets() {
-  // const [step, setStep] = useState(STEPS.CONNECT_GOOGLE);
-  const [step, setStep] = useState(STEPS.EXPORT_SHEET);
+  const [step, setStep] = useState(STEPS.CONNECT_GOOGLE);
   const [loading, setLoading] = useState(false);
 
   function connectGoogleDone() {
