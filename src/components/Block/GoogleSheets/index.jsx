@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
-import BlockBase from './BlockBase';
-import ConnectGoogle from '../ConnectGoogle';
+import BlockBase from '../BlockBase';
+import ConnectGoogle from './ConnectGoogle';
 
-import Button from '../Button';
+import Button from '../../Button';
 
-import GoogleSheetsLogo from '../../icons/GoogleSheetsLogo';
-import FlowIcon from '../../icons/FlowIcon';
+import GoogleSheetsLogo from '../../../icons/GoogleSheetsLogo';
+import FlowIcon from '../../../icons/FlowIcon';
+import ExportSheets from './ExportSheets';
 
 const STEPS = {
   CONNECT_GOOGLE: 0,
@@ -26,10 +27,10 @@ function GoogleSheets() {
   function connectFlow() {
     setLoading(true);
     setTimeout(() => {
-      // mock api call stuff
+      // mock api call
       setLoading(false);
       setStep(STEPS.EXPORT_SHEET);
-    }, 3 * 1000);
+    }, 2 * 1000);
   }
 
   return (
@@ -52,7 +53,7 @@ function GoogleSheets() {
           </Button>
         </div>
       )}
-      {step === STEPS.EXPORT_SHEET && <div>Export Sheet</div>}
+      {step === STEPS.EXPORT_SHEET && <ExportSheets />}
     </BlockBase>
   );
 }

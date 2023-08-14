@@ -1,17 +1,17 @@
 import { useState } from 'react';
-import GoogleLogo from '../icons/GoogleLogo';
-import Button from './Button';
+import GoogleLogo from '../../../icons/GoogleLogo';
+import Button from '../../Button';
 
 function ConnectGoogle({ done }) {
   const [loading, setLoading] = useState(false);
 
   function handleClick() {
     setLoading(true);
-    // mock api call stuff
+    // mock api call
     setTimeout(() => {
       setLoading(false);
       done();
-    }, 3 * 1000);
+    }, 2 * 1000);
   }
 
   return (
