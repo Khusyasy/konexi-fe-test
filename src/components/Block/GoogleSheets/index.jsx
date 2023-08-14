@@ -15,9 +15,17 @@ const STEPS = {
   EXPORT_SHEET: 2,
 };
 
+function Logo() {
+  return (
+    <div className="w-16 h-16 bg-[#e7f6f1] rounded-lg flex items-center justify-center flex-shrink-0">
+      <GoogleSheetsLogo className="h-8" />
+    </div>
+  );
+}
+
 function GoogleSheets() {
   // const [step, setStep] = useState(STEPS.CONNECT_GOOGLE);
-  const [step, setStep] = useState(STEPS.CONNECT_FLOW);
+  const [step, setStep] = useState(STEPS.EXPORT_SHEET);
   const [loading, setLoading] = useState(false);
 
   function connectGoogleDone() {
@@ -34,7 +42,7 @@ function GoogleSheets() {
   }
 
   return (
-    <BlockBase icon={<GoogleSheetsLogo />} title="Export to Google Sheets">
+    <BlockBase icon={<Logo />} title="Export to Google Sheets">
       {step === STEPS.CONNECT_GOOGLE && (
         <ConnectGoogle done={connectGoogleDone} />
       )}
