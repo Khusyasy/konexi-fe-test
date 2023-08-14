@@ -106,7 +106,10 @@ function ExportSheets() {
           full
           className="h-16 max-h-16"
           disabled={
-            selectedAccount === '' || selectedSheet === '' || selectedTab === ''
+            selectedAccount === '' ||
+            selectedSheet === '' ||
+            selectedTab === '' ||
+            loading
           }
           loading={loading}
           onClick={exportData}

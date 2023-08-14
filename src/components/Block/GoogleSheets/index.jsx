@@ -54,6 +54,7 @@ function GoogleSheets() {
             className="h-16 max-h-16"
             onClick={connectFlow}
             loading={loading}
+            disabled={loading}
           >
             <FlowIcon className="text-gray-500" />
             Connect Flow Node to Import to Google Sheets

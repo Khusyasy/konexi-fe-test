@@ -25,7 +25,7 @@ function ConnectGoogle({ done }) {
           </p>
         </div>
       </div>
-      <Button onClick={handleClick} loading={loading}>
+      <Button onClick={handleClick} loading={loading} disabled={loading}>
         Connect
       </Button>
     </div>
