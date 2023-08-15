@@ -1,8 +1,9 @@
-# React + Vite
+# Konexi Frontend Test Project
+Hosted Link: https://konexi-fe-test.vercel.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The project includes the three main sections: Connect Google, Connect Flow, and Export Sheets.
+While the first two sections feature buttons for mock API calls, the Export Sheets section has an implemented form select functionality.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Technologies Used:
+- React + Vite
+- Tailwind CSS + Headless UI
