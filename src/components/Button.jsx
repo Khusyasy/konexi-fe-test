@@ -28,7 +28,7 @@ function Button({
   );
 
   return (
-    <button {...props} className={btnClass}>
+    <button {...props} disabled={disabled} className={btnClass}>
       {loading ? <Spinner /> : children}
     </button>
   );
